@@ -1,8 +1,9 @@
 package com.example.demo.reflection;
 
+import org.apache.commons.lang.time.DateUtils;
+
 import java.lang.reflect.Method;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 /**
  * @Author: mq
@@ -10,14 +11,11 @@ import java.util.Map;
  */
 public class Test {
     public static void main(String[] args) throws Exception {
-        Class b = Bird.class;
-        Method s = b.getDeclaredMethod("sing", String.class);
-        s.invoke(new Bird(), "hahha");
-
-
-        Map<String, Integer> a = new HashMap<>();
-        int c = a.get("1");
-        System.out.println(c);
+        Set<String> s =new HashSet<>();
+        s.add("123");
+        s.add("12345");
+        s.add("12343");
+        System.out.println(s.contains(Integer.valueOf(123).toString()));
     }
 
     public int lengthOfLongestSubstring(String s) {
