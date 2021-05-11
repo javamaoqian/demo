@@ -22,7 +22,6 @@ public class JUCTest {
 
     public static void main(String[] args) throws Exception {
         t5();
-
     }
 
     public static void t1() throws Exception {
@@ -125,8 +124,7 @@ public class JUCTest {
                 new LinkedBlockingDeque<>(3));
 
         for (int i = 0; i < 10; i++) {
-            new Thread(() -> {
-                tpe.execute(() -> {
+                tpe.submit(() -> {
                     try {
                         TimeUnit.SECONDS.sleep(10);
                         System.out.println(Thread.currentThread().getName() + "：over");
@@ -134,7 +132,6 @@ public class JUCTest {
                         e.printStackTrace();
                     }
                 });
-            }).start();
         }
 
         System.out.println(tpe.getActiveCount());

@@ -6,7 +6,8 @@ package com.example.demo.lock;
  */
 public class ThreadTest {
     public static void main(String[] args) throws Exception {
-        System.out.println(5>>5);
+        Thread t = new Thread();
+        t.start();
     }
 
     public void test1() throws Exception {
